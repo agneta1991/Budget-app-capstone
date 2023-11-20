@@ -1,15 +1,165 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #434b54;
+    margin: 0;
+}
+
+.alert,
+.notice {
+    margin: 0;
+}
+
+.main_div {
+    height: 95vh;
+}
+
+nav {
+    width: 100%;
+    background-color: #3778c2;
+    color: white;
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+
+nav>* {
+    margin: 0;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    width: 100vw;
+}
+
+.back_btn {
+    height: 1.5rem;
+}
+
+.burger_menu {
+    width: 13rem;
+}
+
+.signout {
+    width: 17rem;
+}
+
+.sign_up {
+    height: 90%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgb(237, 236, 236);
+}
+
+h1 {
+    margin-top: auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-top: auto;
+}
+
+.login {
+    background-color: #3778c2;
+    color: white;
+}
+
+.signup {
+    color: #434b54;
+}
+
+.login,
+.signup {
+    text-decoration: none;
+    width: 85%;
+    padding: 1rem;
+    margin: 0.2rem;
+    border-radius: 4px;
+}
+
+form {
+    width: 99vw;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    margin-top: 1rem;
+}
+
+.field {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #434b5494;
+    padding: 0.5rem;
+}
+
+.field>* {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    box-sizing: border-box;
+}
+
+.field>input {
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+.registration_btn {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 0.4rem;
+    margin: 0.6rem;
+    background-color: #3778c2;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+em {
+    font-size: 0.8rem;
+}
+
+.sign_up>a {
+    text-decoration: none;
+    color: #434b54;
+    margin: 0.2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.actions {
+    width: 35%;
+    font-size: 1rem;
+}
+
+.custom-field {
+    display: flex;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#user_remember_me {
+    justify-self: flex-end;
+    width: 15%;
+}
+
+.forgot {
+    margin-left: 0.8rem;
+}
+
+img {
+    width: 2rem;
+    height: auto;
+}

@@ -160,7 +160,7 @@ If you like my page please show your support and give this page a star!
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 <br>
 
-#### **I would like to say a big thanks to original design idea by Gregoire Vella on Behance, who allowed students to use her page as a template** ####
+#### **I would like to express my sincere gratitude to Gregoire Vella for the original design idea and for the kindness of allowing students to use his page as a template.** ####
 
 <br>
 I would like to extend my heartfelt gratitude to Microverse for providing me with the opportunity to undertake this capstone project. Additionally, I am immensely thankful to the code reviewers who took the time to assess my work and provide valuable feedback, which greatly contributed to the refinement and success of the project. Your guidance and support have been invaluable throughout this solo endeavor, and I am truly grateful for your contributions.

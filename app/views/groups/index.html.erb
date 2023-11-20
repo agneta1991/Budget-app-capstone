@@ -1,0 +1,29 @@
+<div class='main_div'>
+  <nav>
+    <div class='burger_menu'>
+      <%= link_to groups_path, class: 'back_btn' do %>
+        <img class='back_btn' src="https://img.icons8.com/ios/50/ffffff/menu--v7.png" alt="menu--v7"/>
+      <% end %>
+    </div>
+    <p>CATEGORIES</p>
+    <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
+  </nav>
+  <div class='total_amount'>
+    <p>Total spendings:</p>
+    <p>0.00</p>
+  </div>
+  <div class='groups'>
+  <% @groups.each do |group| %>
+    <div class="individual_group">
+      <div class="group-icon">
+          <%= image_tag(group.icon) %>
+      </div>
+      <p>Name: <%= group.name %></p>
+      <p>Total: </p>
+    </div>
+  <% end %>
+  </div>
+</div>
+<div class = 'new_category'>
+<%=link_to 'NEW CATEGORY', new_group_path, class: 'new_category_btn' %>
+</div>
