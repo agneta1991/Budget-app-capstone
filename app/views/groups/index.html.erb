@@ -10,18 +10,21 @@
   </nav>
   <div class='total_amount'>
     <p>Total spendings:</p>
-    <p>0.00</p>
+    <p><span>0.00<span></p>
   </div>
   <div class='groups'>
   <% @groups.each do |group| %>
+  <%= link_to group_entities_path(group) do %>
     <div class="individual_group">
       <div class="group-icon">
-          <%= image_tag(group.icon) %>
+        <%= image_tag(group.icon) %>
       </div>
       <p>Name: <%= group.name %></p>
       <p>Total: </p>
     </div>
   <% end %>
+<% end %>
+
   </div>
 </div>
 <div class = 'new_category'>
