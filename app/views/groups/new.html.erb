@@ -5,12 +5,134 @@
         <img class='back_btn' src="https://img.icons8.com/ios/50/ffffff/menu--v7.png" alt="menu--v7"/>
       <% end %>
     </div>
-    <p>NEW CATEGORY</p>
+    <p>CATEGORY</p>
     <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
   </nav>
 
   <%= form_with(model: @group, url: groups_path, local: true) do |form| %>
     <div class="field">
+      <p>You can choose a category:</p>
+      <div class="field">
+        <div class='category_form'>
+
+
+          <div class='radio_btn'>
+            <%= form.label :icon do %>
+              <%= image_tag 'https://img.icons8.com/ios/50/000000/bill.png', alt: 'Bills' %>
+              Bills  <%= form.radio_button :icon, 'Bills', id: 'bills_radio' %>
+            <% end %>
+            <%= form.hidden_field :name, value: 'Bills', id: 'name_field' %>
+            <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/bill.png', id: 'icon_bills' %>
+          </div>
+
+          <div class='radio_btn'>
+            <%= form.label :icon, 'Transport' do %>
+              <%= image_tag 'https://img.icons8.com/ios/50/000000/car.png', alt: 'Transport' %>
+              Transport  <%= form.radio_button :icon, 'Transport' %>
+            <% end %>
+            <%= form.hidden_field :name, value: 'Transport', id: 'name_field' %>
+            <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/car.png', id: 'icon_transport' %>
+          </div>
+
+
+   <div class='radio_btn'>
+  <%= form.label :icon, 'Finances' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/money.png', alt: 'Finances' %>
+    Finances <%= form.radio_button :icon, 'finances' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Finances', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/money.png', id: 'icon_finances' %>
+</div>
+
+<div class='radio_btn'>
+  <%= form.label :icon, 'Groceries' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/banana.png', alt: 'Groceries' %>
+    Groceries <%= form.radio_button :icon, 'groceries' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Groceries', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/banana.png', id: 'icon_groceries' %>
+</div>
+
+<div class='radio_btn'>
+  <%= form.label :icon, 'Holidays' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/beach.png', alt: 'Holidays' %>
+    Holidays <%= form.radio_button :icon, 'holidays' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Holiday', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/beach.png', id: 'icon_holiday' %>
+</div>
+
+
+
+    <div class='radio_btn'>
+  <%= form.label :icon, 'Eating Out' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/restaurant.png', alt: 'Eating Out' %>
+    Eating Out <%= form.radio_button :icon, 'eating_out' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Eating out', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/restaurant.png', id: 'icon_eating' %>
+</div>
+
+<div class='radio_btn'>
+  <%= form.label :icon, 'Personal Care' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/spa.png', alt: 'Personal Care' %>
+    Personal Care <%= form.radio_button :icon, 'personal_care' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Personal Care', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/spa.png', id: 'icon_personal' %>
+</div>
+
+<div class='radio_btn'>
+  <%= form.label :icon, 'Shopping' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/shopping-bag.png', alt: 'Shopping' %>
+    Shopping <%= form.radio_button :icon, 'shopping' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Shopping', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/shopping-bag.png', id: 'icon_shopping' %>
+</div>
+
+<div class='radio_btn'>
+  <%= form.label :icon, 'General' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/list.png', alt: 'General' %>
+    General <%= form.radio_button :icon, 'general' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'General', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/list.png', id: 'icon_general' %>
+</div>
+
+<div class='radio_btn'>
+  <%= form.label :icon, 'Entertainment' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/movie.png', alt: 'Entertainment' %>
+    Entertainment <%= form.radio_button :icon, 'entertainment' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Entertainment', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/movie.png', id: 'icon_entertainment' %>
+</div>
+
+<div class='radio_btn'>
+  <%= form.label :icon, 'Family' do %>
+    <%= image_tag 'https://img.icons8.com/ios/50/000000/family.png', alt: 'Family' %>
+    Family <%= form.radio_button :icon, 'family' %>
+  <% end %>
+
+  <%= form.hidden_field :name, value: 'Family', id: 'name_field' %>
+  <%= form.hidden_field :icon, value: 'https://img.icons8.com/ios/50/000000/family.png', id: 'icon_family' %>
+</div>
+
+</div>
+</div>
+</div>
+
+<p>Or add your own category </p>
+<div class="field">
       <%= form.text_field :name, placeholder: 'Category name' %>
     </div>
 
@@ -18,83 +140,8 @@
       <%= form.text_field :icon, placeholder: 'Icon URL' %>
     </div>
 
-    <div class="field">
-      <p>Choose a category:</p>
-      <div class="field">
-  <p>Choose a category:</p>
-
-<%= form.radio_button :icon, 'Bills' %>
-<%= form.label :icon do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/bill.png', alt: 'Bills' %>
-  Bills
-<% end %>
-  
-  <%= form.radio_button :icon, 'transport' %>
-<%= form.label :icon, 'Transport' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/car.png', alt: 'Transport' %>
-  Transport
-<% end %><br>
-
-<%= form.radio_button :icon, 'finances' %>
-<%= form.label :icon, 'Finances' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/money.png', alt: 'Finances' %>
-  Finances
-<% end %><br>
-
-<%= form.radio_button :icon, 'groceries' %>
-<%= form.label :icon, 'Groceries' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/banana.png', alt: 'Groceries' %>
-  Groceries
-<% end %><br>
-
-<%= form.radio_button :icon, 'holidays' %>
-<%= form.label :icon, 'Holidays' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/beach.png', alt: 'Holidays' %>
-  Holidays
-<% end %><br>
-
-<%= form.radio_button :icon, 'eating_out' %>
-<%= form.label :icon, 'Eating Out' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/restaurant.png', alt: 'Eating Out' %>
-  Eating Out
-<% end %><br>
-
-<%= form.radio_button :icon, 'personal_care' %>
-<%= form.label :icon, 'Personal Care' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/spa.png', alt: 'Personal Care' %>
-  Personal Care
-<% end %><br>
-
-<%= form.radio_button :icon, 'shopping' %>
-<%= form.label :icon, 'Shopping' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/shopping-bag.png', alt: 'Shopping' %>
-  Shopping
-<% end %><br>
-
-<%= form.radio_button :icon, 'general' %>
-<%= form.label :icon, 'General' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/list.png', alt: 'General' %>
-  General
-<% end %><br>
-
-<%= form.radio_button :icon, 'entertainment' %>
-<%= form.label :icon, 'Entertainment' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/movie.png', alt: 'Entertainment' %>
-  Entertainment
-<% end %><br>
-
-<%= form.radio_button :icon, 'family' %>
-<%= form.label :icon, 'Family' do %>
-  <%= image_tag 'https://img.icons8.com/ios/50/000000/family.png', alt: 'Family' %>
-  Family
-<% end %><br>
-
+<div class="actions">
+  <%= form.submit 'Add Category'%>
 </div>
-
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-  <% end %>
+<% end %>
 </div>
