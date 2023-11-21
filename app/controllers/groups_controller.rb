@@ -22,6 +22,8 @@ class GroupsController < ApplicationController
 
   def destroy; end
 
+  private
+
   def group_params
     params.require(:group).permit(:name, :user_id, :icon)
   end
