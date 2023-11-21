@@ -5,6 +5,11 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @total_amount = 0
+  
+    @groups.each do |group|
+      @total_amount += group.entities.sum(:amount)
+    end
   end
 
   def new

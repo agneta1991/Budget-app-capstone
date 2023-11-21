@@ -8,9 +8,10 @@
     <p>CATEGORIES</p>
     <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
   </nav>
+  <div class = 'groups_page'>
   <div class='total_amount'>
     <p>Total spendings:</p>
-    <p><span>0.00<span></p>
+    <p><span><%= @total_amount %><span></p>
   </div>
   <div class='groups'>
   <% @groups.each do |group| %>
@@ -20,13 +21,14 @@
         <%= image_tag(group.icon) %>
       </div>
       <p>Name: <%= group.name %></p>
-      <p>Total: </p>
+      <p>Total: <%= group.entities.sum(:amount) %> </p>
     </div>
   <% end %>
 <% end %>
 
   </div>
 </div>
-<div class = 'new_category'>
+  <footer id = 'new_category'>
 <%=link_to 'NEW CATEGORY', new_group_path, class: 'new_category_btn' %>
+</footer>
 </div>
