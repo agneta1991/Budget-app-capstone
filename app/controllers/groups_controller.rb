@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GroupsController < ApplicationController
   before_action :authenticate_user!
 
@@ -8,7 +10,6 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
   end
-
 
   def create
     @group = Group.new(group_params.merge(user_id: current_user.id))
