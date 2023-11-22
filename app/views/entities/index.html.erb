@@ -12,15 +12,19 @@
 <p>Total amount:</p>
 <p>$<%= @total %></p>
 </div>
-<button class='delete_btn delete_category'>Delete Category </button>
+<%= button_to "Delete Category", group_path(@group), method: :delete, class: 'delete_btn' %>
+
 <% @entities.each do |entity| %>
   <div class="individual_entity">
-    <p><%= entity.name %><br>
-      <span class = 'date'><%= entity.created_at.strftime("%Y-%m-%d")%></span></p>
-    <p><span>$<%= entity.amount%><span></p>
-    <button class = 'delete_btn'>Delete</button>
+    <%= link_to group_entity_path(@group, entity), class: 'entity-link' do %>
+      <p><%= entity.name %><br>
+        <span class='date'><%= entity.created_at.strftime("%Y-%m-%d") %></span>
+      </p>
+      <p><span>$<%= entity.amount %></span></p>
+    <% end %>
   </div>
 <% end %>
+
 
   <footer id = 'new_category'>
 <%=link_to 'ADD TRANSACTION', new_group_entity_path(@group), class: 'new_category_btn' %>

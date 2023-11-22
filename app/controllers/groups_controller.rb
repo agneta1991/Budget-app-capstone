@@ -26,7 +26,15 @@ class GroupsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @user = current_user
+    @group = @user.groups.find(params[:id])
+    if @group.destroy
+      redirect_to groups_path, notice: 'Recipe deleted successfully'
+    else
+      redirect_to groups_path, alert: 'Error: could not be deleted'
+    end
+  end
 
   private
 

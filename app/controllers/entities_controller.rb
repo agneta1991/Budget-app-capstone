@@ -8,6 +8,12 @@ class EntitiesController < ApplicationController
     @user = current_user
   end
 
+  def show
+    @group = Group.find(params[:group_id])
+    @entities = @group.entities.order(created_at: :desc)
+    @entity = @entities.find(params[:id])
+  end
+
   def new
     @user = current_user
     @group = @user.groups.find(params[:group_id])
@@ -26,7 +32,14 @@ class EntitiesController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+      @entity = Entity.find(params[:id])
+    if @entity.destroy
+      redirect_to groups_path, notice: 'Recipe deleted successfully'
+    else
+      redirect_to groups_path, alert: 'Error: could not be deleted'
+    end
+  end
 
   def entity_params
     params.require(:entity).permit(:name, :amount, :group_id, :author_id)
