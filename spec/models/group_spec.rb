@@ -25,12 +25,12 @@ RSpec.describe Group, type: :model do
   it 'icon has to start with https' do
     user = User.create(id: 41, email: 'agneta@agneta.com', name: 'Agneta', surname: 'Pupienyte', password: 'password')
     group = Group.create(id: 120, name: 'Entertainment', icon: 'www.example.png', user_id: user.id)
-    expect(group.errors[:icon]).to include('As it is a link please start with https:// and it must have a valid format (either .png or .jpg)')
+    expect(group.errors[:icon]).to include('Please start with https:// and it must have a valid format (either .png or .jpg)')
   end
 
   it 'icon has to start with https' do
     user = User.create(id: 41, email: 'agneta@agneta.com', name: 'Agneta', surname: 'Pupienyte', password: 'password')
     group = Group.create(id: 120, name: 'Entertainment', icon: 'https://example.com', user_id: user.id)
-    expect(group.errors[:icon]).to include('As it is a link please start with https:// and it must have a valid format (either .png or .jpg)')
+    expect(group.errors[:icon]).to include('Please start with https:// and it must have a valid format (either .png or .jpg)')
   end
 end
