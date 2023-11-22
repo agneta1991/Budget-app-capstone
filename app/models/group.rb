@@ -19,8 +19,8 @@ class Group < ApplicationRecord
       return
     end
 
-    unless icon.start_with?('https://') && (icon.end_with?('.png') || icon.end_with?('.jpg'))
-      errors.add(:icon, 'As it is a link please start with https:// and it must have a valid format (either .png or .jpg)')
-    end
+    return if icon.start_with?('https://') && (icon.end_with?('.png') || icon.end_with?('.jpg'))
+
+    errors.add(:icon, 'Please start with https:// and it must have a valid format (either .png or .jpg)')
   end
 end
