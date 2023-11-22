@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+#  : true
 
 class CreateGroupEntities < ActiveRecord::Migration[7.1]
   def change

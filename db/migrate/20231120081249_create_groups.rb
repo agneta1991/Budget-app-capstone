@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+#  : true
 
 class CreateGroups < ActiveRecord::Migration[6.1]
   def change
