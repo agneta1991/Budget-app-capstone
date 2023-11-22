@@ -21,6 +21,6 @@ class Group < ApplicationRecord
 
     return if icon.start_with?('https://') && (icon.end_with?('.png') || icon.end_with?('.jpg'))
 
-    errors.add(:icon, 'Please start with https:// and it must have a valid format (either .png or .jpg)')
+    errors.add(:icon, 'It must have a valid format (https:// .png or .jpg)')
   end
 end
