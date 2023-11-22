@@ -33,7 +33,7 @@ class EntitiesController < ApplicationController
   end
 
   def destroy
-      @entity = Entity.find(params[:id])
+    @entity = Entity.find(params[:id])
     if @entity.destroy
       redirect_to groups_path, notice: 'Recipe deleted successfully'
     else
