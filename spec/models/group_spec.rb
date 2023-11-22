@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   it 'is not valid with valid attributes' do
-    user = User.create(id: 1001, email: 'agneta@agneta.com', name: 'Agneta', surname: 'Pupienyte', password: 'password')
     group = Group.create(id: 1002, name: 'Entertainment', icon: 'https://img.icons8.com/ios/50/f08080/theatre-mask.png')
     expect(group).to_not be_valid
   end
