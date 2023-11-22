@@ -362,3 +362,10 @@ footer {
 .suggestion_p > span {
   color: #434b54;
 }
+
+.error {
+  padding: 0.4rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #d9534f;
+}

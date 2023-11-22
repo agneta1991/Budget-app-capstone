@@ -57,7 +57,7 @@ This project is built using the following technologies:
 <br>
 
 - [Check the live demo, mobile version](https://dugetapp.onrender.com)
-
+- [Check quick demonstration of the app video by clicking the link](https://www.loom.com/share/15e4d6cb7158443c9c80ef1dcceb9652?sid=571f4389-9d55-46c5-a5b1-515d8565cde4)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

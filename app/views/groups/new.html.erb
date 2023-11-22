@@ -10,6 +10,12 @@
   </nav>
 
   <%= form_with(model: @group, url: groups_path, local: true) do |form| %>
+   <% if @group.errors.any? %>
+      <% @group.errors.full_messages_for(:icon).each do |msg| %>
+        <p class ='error'> <%= msg %> </p>
+      <% end %>
+    <% end %>
+
   <p class = 'add_category'> Add your category </p>
     <div class="field">
       <%= form.text_field :name, placeholder: 'Category name' %>
