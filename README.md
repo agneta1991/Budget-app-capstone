@@ -53,10 +53,10 @@ This project is built using the following technologies:
 
 
 
-## 🚀 Live Demo <a name="live-demo"></a> <a name='video'></a>
+## 🚀 Live Demo & Video presentation<a name="live-demo"></a> <a name='video'></a>
 <br>
 
-- [Will be deployed in near future](link)
+- [Check the live demo, mobile version](https://dugetapp.onrender.com)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

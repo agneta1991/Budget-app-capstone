@@ -23,6 +23,9 @@ RSpec.describe 'Group', type: :feature do
 
     it 'should have navigation bar content' do
       expect(page).to have_content('SIGN OUT')
+    end
+
+    it 'should have navigation bar content' do
       expect(page).to have_content('CATEGORY')
     end
   end

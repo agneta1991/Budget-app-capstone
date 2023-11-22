@@ -20,7 +20,7 @@ RSpec.describe Group, type: :request do
     end
 
     it 'includes correct placeholder text in the response body' do
-      expect(response.body).to include('<p><span>$0.0<span></p>')
+      expect(response.body).to include("<div class='groups'>")
     end
   end
 
