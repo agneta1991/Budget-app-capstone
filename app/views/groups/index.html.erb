@@ -6,12 +6,12 @@
       <% end %>
     </div>
     <p>CATEGORIES</p>
-    <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
   </nav>
   <div class = 'groups_page'>
   <div class='total_amount'>
     <p>Total spendings:</p>
-    <p><span><%= @total_amount %><span></p>
+    <p><span>$<%= @total_amount %><span></p>
   </div>
   <div class='groups'>
   <% @groups.each do |group| %>
@@ -20,15 +20,17 @@
       <div class="group-icon">
         <%= image_tag(group.icon) %>
       </div>
-      <p>Name: <%= group.name %></p>
-      <p>Total: <%= group.entities.sum(:amount) %> </p>
+      <p class='group_name'><%= group.name %><br>
+      <span class = 'date'><%= group.created_at.strftime("%Y-%m-%d")%></span>
+      </p>
+      <p>Total: $<%= group.entities.sum(:amount) %> </p>
     </div>
   <% end %>
 <% end %>
 
   </div>
 </div>
+</div>
   <footer id = 'new_category'>
 <%=link_to 'NEW CATEGORY', new_group_path, class: 'new_category_btn' %>
 </footer>
-</div>

@@ -6,11 +6,11 @@
       <% end %>
     </div>
     <p>CATEGORY</p>
-    <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
   </nav>
 
   <%= form_with(model: @group, url: groups_path, local: true) do |form| %>
-  <p> Add your category </p>
+  <p class = 'add_category'> Add your category </p>
     <div class="field">
       <%= form.text_field :name, placeholder: 'Category name' %>
     </div>

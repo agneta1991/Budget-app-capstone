@@ -6,17 +6,23 @@
       <% end %>
     </div>
     <p><%= @group.name %></p>
-    <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
   </nav>
 <div class = 'total_amount'>
 <p>Total amount:</p>
-<p><%= @total %></p>
+<p>$<%= @total %></p>
 </div>
+<button class='delete_btn delete_category'>Delete Category </button>
 <% @entities.each do |entity| %>
   <div class="individual_entity">
-    <p><%= entity.name %></p>
-    <p><%= entity.amount%></p>
+    <p><%= entity.name %><br>
+      <span class = 'date'><%= entity.created_at.strftime("%Y-%m-%d")%></span></p>
+    <p><span>$<%= entity.amount%><span></p>
+    <button class = 'delete_btn'>Delete</button>
   </div>
 <% end %>
 
-<%= link_to "Add Transaction", new_group_entity_path(@group), class: "btn btn-primary" %>
+  <footer id = 'new_category'>
+<%=link_to 'ADD TRANSACTION', new_group_entity_path(@group), class: 'new_category_btn' %>
+</footer>
+</div>

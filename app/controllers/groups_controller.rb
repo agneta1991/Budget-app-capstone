@@ -4,9 +4,9 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.all
+    @groups = Group.all.order(created_at: :desc)
     @total_amount = 0
-  
+
     @groups.each do |group|
       @total_amount += group.entities.sum(:amount)
     end

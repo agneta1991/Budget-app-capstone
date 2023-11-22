@@ -3,8 +3,9 @@ class EntitiesController < ApplicationController
 
   def index
     @group = Group.find(params[:group_id])
-    @entities = @group.entities
+    @entities = @group.entities.order(created_at: :desc)
     @total = @entities.sum(:amount)
+    @user = current_user
   end
 
   def new
