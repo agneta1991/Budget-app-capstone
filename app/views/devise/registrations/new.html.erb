@@ -1,0 +1,44 @@
+<div class = 'main_div'>
+<nav>
+<%= link_to groups_path, class: 'back_btn' do %>
+<img class='back_btn'src="https://img.icons8.com/ios/50/ffffff/back--v1.png" alt="back--v1"/>
+<%end%>
+<p>REGISTER</p>
+<%= render "devise/shared/links" %>
+
+</nav>
+<div class='sign_up'>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Your name' %>
+  </div>
+
+    <div class="field">
+    <%= f.text_field :surname, autofocus: true, autocomplete: "surname", placeholder: 'Your surname' %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'example@example.com' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password' %>
+        <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Password Confirmation' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'registration_btn' %>
+  </div>
+<% end %>
+
+</div>
+</div>
