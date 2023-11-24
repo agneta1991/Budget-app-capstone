@@ -8,38 +8,65 @@
     <p>CATEGORY</p>
         <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
   </nav>
-
-  <%= form_with(model: @group, url: groups_path, local: true) do |form| %>
-   <% if @group.errors.any? %>
+<%= form_with(model: @group, url: groups_path, local: true) do |form| %>
+    <% if @group.errors.any? %>
       <% @group.errors.full_messages_for(:icon).each do |msg| %>
-        <p class ='error'> <%= msg %> </p>
+        <p class='error'> <%= msg %> </p>
       <% end %>
     <% end %>
 
-  <p class = 'add_category'> Add your category </p>
-    <div class="field">
-      <%= form.text_field :name, placeholder: 'Category name' %>
-    </div>
+    <p class='add_category'>Add your category</p>
+        <p class = 'choose'>Choose category name:</p>
 
-    <div class="field">
-      <%= form.text_field :icon, placeholder: 'Icon URL' %>
-    </div>
+    <div class='field choose_name'>
 
-    <div class = 'suggestions'>
-    <h3>There are some suggestions for categories:</h3>
-    <p class = 'suggestion_p'>Entertainment:   <span>https://img.icons8.com/ios/50/theatre-mask.png</span> </p> <br>
-    <p class = 'suggestion_p'>Groceries:   <span> https://img.icons8.com/emoji/48/banana-emoji.png</span> </p><br>
-    <p class = 'suggestion_p'>Bills:   <span>https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-taxes-banking-flaticons-lineal-color-flat-icons-4.png</span> </p><br>
-    <p class = 'suggestion_p'>Shopping:   <span>https://img.icons8.com/fluency/48/shopaholic.png</span> </p><br>
-    <p class = 'suggestion_p'>Transport:   <span>https://img.icons8.com/fluency/48/sedan.png</span></p><br>
-    <p class = 'suggestion_p'>Eating out:   <span>https://img.icons8.com/fluency/48/waiter.png</span></p><br>
-    <p class = 'suggestion_p'>Holiday:   <span>https://img.icons8.com/fluency/48/beach.png</span></p><br>
-    <p class = 'suggestion_p'>Personal care:   <span>https://img.icons8.com/fluency/48/spa-mask.png</span></p><br>
+<%= form.collection_radio_buttons :name, [['Entertainment', 'Entertainment'],
+                                            ['Groceries', 'Groceries'],
+                                            ['Bills', 'Bills'],
+                                            ['Shopping', 'Shopping'],
+                                            ['Transport', 'Transport'],
+                                            ['Eating out', 'Eating out'],
+                                            ['Holiday', 'Holiday'],
+                                            ['Personal care', 'Personal care'],
+                                            ['Finances', 'Finances'],
+                                            ['Car payments', 'Car payments'],
+                                            ['Loans', 'Loans']], :first, :last %>
 
     </div>
 
-<div class="actions">
-  <%= form.submit 'ADD CATEGORY'%>
-</div>
-<% end %>
+    <!-- Hide the icon text_field, as it will be set based on the selected radio button -->
+    <%= form.hidden_field :icon, id: 'icon-url-field' %>
+
+    <div class='suggestions'>
+    <p class = 'choose'>Choose an icon:</p>
+
+      <% suggestions = {
+        'Entertainment' => "https://img.icons8.com/color/48/concert.png",
+        'Groceries' => 'https://img.icons8.com/emoji/48/banana-emoji.png',
+        'Bills' => 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-taxes-banking-flaticons-lineal-color-flat-icons-4.png',
+        'Shopping' => 'https://img.icons8.com/fluency/48/shopaholic.png',
+        'Transport' =>  'https://img.icons8.com/emoji/48/train-emoji.png',
+        'Eating out' => 'https://img.icons8.com/fluency/48/waiter.png',
+        'Holiday' => 'https://img.icons8.com/fluency/48/beach.png',
+        'Personal care' => 'https://img.icons8.com/fluency/48/spa-mask.png',
+        'Finances' => 'https://img.icons8.com/color/48/accumulate.png',
+        'Car payments' => 'https://img.icons8.com/fluency/48/sedan.png',
+        'Loans' => 'https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/external-loan-finance-itim2101-lineal-color-itim2101.png',
+        'Toll' => 'https://img.icons8.com/color/48/tollbooth.png'
+
+      } %>
+      <div class='icon-suggestions choose_icon'>
+        <% suggestions.each do |category, icon_url| %>
+          <div class='icon-suggestion <%= category.downcase.gsub(' ', '-') %>'>
+            <%= form.radio_button :icon, icon_url, class: 'icon-radio', data: { category: category } %>
+            <%= image_tag(icon_url, class: 'icon-image', alt: category) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class='actions'>
+      <%= form.submit 'ADD CATEGORY', class: 'add-category-btn' %>
+    </div>
+  <% end %>
 </div>

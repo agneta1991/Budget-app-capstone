@@ -16,8 +16,14 @@ body {
 
 .userindex {
   background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+    height: 100vh;
 }
 
+.add_transactions {
+  padding: 1rem;
+  font-size: 0.8rem;
+}
 .button_to {
   background-color: transparent;
   margin: 0;
@@ -332,8 +338,6 @@ footer {
 .delete_transaction {
   display: flex;
   flex-direction: column;
-
-  /* align-items: center; */
   justify-content: center;
   width: 100%;
   height: 50%;
@@ -351,6 +355,7 @@ footer {
 .suggestions {
   padding: 0.4rem;
   margin: 0;
+  border: none;
 }
 
 .suggestion_p {
@@ -368,4 +373,32 @@ footer {
   font-size: 0.6rem;
   font-weight: 600;
   color: #d9534f;
+}
+
+.choose_name {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  border: none;
+}
+
+.choose_icon {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.choose_icon>* {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  margin: 0.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.197);
+  border-radius: 3px;
+}
+
+.choose {
+  background-color: transparent;
+  padding: 1rem;
+  color: black;
 }

@@ -13,6 +13,7 @@
     <p>Total spendings:</p>
     <p><span>$<%= @total_amount %><span></p>
   </div>
+
   <div class='groups'>
   <% @groups.each do |group| %>
   <%= link_to group_entities_path(group) do %>
